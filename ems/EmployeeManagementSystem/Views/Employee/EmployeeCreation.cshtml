@@ -1,0 +1,76 @@
+﻿@model EmployeeManagementSystem.Models.Employee
+                                
+@{
+    ViewBag.Title = "EmployeeCreation";
+}
+
+<h2>New Employee</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script type="text/javascript" src="../../Scripts/jquery-1.4.4.js" language="javascript"></script>
+<script type="text/javascript">
+    
+    $(function () {
+        $('.focus :input').focus();
+    });
+   
+</script>
+
+@using (Html.BeginForm("EmployeeCreation", "Employee", FormMethod.Post)) 
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Employee</legend>
+     
+        <div class="editor-field">
+             
+            @Html.DropDownList("DDlist" ,new SelectList(ViewBag.Employees, "Key", "Value"), new { @name = "EmpTypeL" })
+            
+           
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field focus">
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            SIN
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SIN_BN)
+            @Html.ValidationMessageFor(model => model.SIN_BN)
+            @Html.ValidationMessage("SIN_BN")
+        </div>       
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateOfBirth)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateOfBirth)
+            @Html.ValidationMessageFor(model => model.DateOfBirth)
+            @Html.ValidationMessage("DOB")
+        </div>
+
+      
+
+         <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+
+

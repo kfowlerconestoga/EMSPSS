@@ -1,0 +1,59 @@
+﻿@model EmployeeManagementSystem.Models.SeasonalEmployee
+
+<h2>Seasonal</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    
+    $(function () {
+        $('.focus :input').focus();
+    });
+   
+</script>
+
+@using (Html.BeginForm("Seasonal", "Employee", FormMethod.Post))
+{
+     @Html.Hidden("name");
+    @Html.Hidden("last");
+    @Html.Hidden("day");
+    @Html.Hidden("month");
+    @Html.Hidden("year");
+    @Html.Hidden("sin");
+    @Html.ValidationSummary(true)
+     <fieldset>
+        <legend>Employee</legend>
+    
+    <div class="editor-label">
+            @Html.LabelFor(model => model.Season.Season1)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("SeasonLst", new SelectList(ViewBag.SeasonName), "Select..") 
+            @Html.ValidationMessage("season")
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SeasonYear)
+        </div>
+        <div class="editor-field focus">
+            @Html.EditorFor(model => model.SeasonYear)
+            @Html.ValidationMessageFor(model => model.SeasonYear)
+            @Html.ValidationMessage("DOH")
+        </div>
+
+    <div class="editor-label">
+            @Html.LabelFor(model => model.Company.CompanyName)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CompList", new SelectList(ViewBag.CompName), "Select..")
+            @Html.ValidationMessage("comp") 
+        </div>
+ 
+     <p>
+            <input type="submit" value="Create" />
+        </p>
+        </fieldset>
+}
+
+
+
+

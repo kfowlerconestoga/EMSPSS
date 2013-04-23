@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+<h2 class="MYHead">Search</h2>
+<p>
+    @using (Html.BeginForm("SearchIndex","Home",FormMethod.Post ,new{id = "SearchForm"})){   
+         <p class="MYHead">
+             
+           First Name:<br /> @Html.TextBox("FirstName2", "", new {@class="SearchTextBox" })<br />
+           Last Name:<br /> @Html.TextBox("LastName2", "", new {@class="SearchTextBox" })  <br />
+           SIN/BN:<br /> @Html.TextBox("SINBN2", "", new {@class="SearchTextBox" })
+         <input type="submit" value="Search"  onclick="$('#SearchForm').submit()" />
+
+         </p>
+        }
+</p>

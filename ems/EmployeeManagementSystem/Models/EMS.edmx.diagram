@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="36932c560e3d40fca5aea4d4b773da66" Name="Diagram1">
+        <EntityTypeShape EntityType="EMSModel.Audit" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMSModel.AuditAction" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMSModel.Company" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMSModel.ContractEmployee" Width="1.5" PointX="6" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMSModel.Employee" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMSModel.EmployeeType" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMSModel.Fieldname" Width="1.5" PointX="0.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMSModel.FullTimeEmployee" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMSModel.PartTimeEmployee" Width="1.5" PointX="6" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMSModel.Piece" Width="1.5" PointX="6" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMSModel.ReasonForLeaving" Width="1.5" PointX="3.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMSModel.Season" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMSModel.SeasonalEmployee" Width="1.5" PointX="9" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMSModel.TimeCard" Width="1.5" PointX="9" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EMSModel.User" Width="1.5" PointX="0.75" PointY="22" IsExpanded="true" />
+        <AssociationConnector Association="EMSModel.AuditTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.EmployeeRefId5" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.FieldId" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.UserName" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.CompanyId" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.EmployedWith2Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.EmployedWith3Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.EmployedWith4Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.EmployedWith5Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.EmployedWith6Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.EmployedWithId" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.EmployeeRef4Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.ReasonForLeaving4Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.EmployeeId" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.EmployeeRef2Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.EmployeeRef3Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.EmployeeRef5Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.EmployeeRef6Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.EmployeeRefId" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.ReasonForLeavingId" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.ReasonForLeaving2Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.ReasonForLeaving3Id" ManuallyRouted="false" />
+        <AssociationConnector Association="EMSModel.SeasonId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

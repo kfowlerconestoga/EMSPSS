@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EMSModelStoreContainer" CdmEntityContainer="EMSEntities12">
+    <EntitySetMapping Name="Audits">
+      <EntityTypeMapping TypeName="EMSModel.Audit">
+        <MappingFragment StoreEntitySet="Audit">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="AuditTypeId" ColumnName="AuditTypeId" />
+          <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+          <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+          <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditActions">
+      <EntityTypeMapping TypeName="EMSModel.AuditAction">
+        <MappingFragment StoreEntitySet="AuditActions">
+          <ScalarProperty Name="AuditTypeId" ColumnName="AuditTypeId" />
+          <ScalarProperty Name="AuditAction1" ColumnName="AuditAction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="EMSModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="EnrolledSince" ColumnName="EnrolledSince" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractEmployees">
+      <EntityTypeMapping TypeName="EMSModel.ContractEmployee">
+        <MappingFragment StoreEntitySet="ContractEmployee">
+          <ScalarProperty Name="EmployeeRef4Id" ColumnName="EmployeeRef4Id" />
+          <ScalarProperty Name="EmployedWith4Id" ColumnName="EmployedWith4Id" />
+          <ScalarProperty Name="ContractStartDate" ColumnName="ContractStartDate" />
+          <ScalarProperty Name="ContractStopDate" ColumnName="ContractStopDate" />
+          <ScalarProperty Name="ReasonForLeaving4Id" ColumnName="ReasonForLeaving4Id" />
+          <ScalarProperty Name="FixedContractAmount" ColumnName="FixedContractAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="EMSModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="SIN_BN" ColumnName="SIN/BN" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeTypes">
+      <EntityTypeMapping TypeName="EMSModel.EmployeeType">
+        <MappingFragment StoreEntitySet="EmployeeType">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="EmployeeType1" ColumnName="EmployeeType" />
+          <ScalarProperty Name="DateofHire" ColumnName="DateofHire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fieldnames">
+      <EntityTypeMapping TypeName="EMSModel.Fieldname">
+        <MappingFragment StoreEntitySet="Fieldname">
+          <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+          <ScalarProperty Name="Fieldname1" ColumnName="Fieldname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FullTimeEmployees">
+      <EntityTypeMapping TypeName="EMSModel.FullTimeEmployee">
+        <MappingFragment StoreEntitySet="FullTimeEmployee">
+          <ScalarProperty Name="EmployeeRefId" ColumnName="EmployeeRefId" />
+          <ScalarProperty Name="EmployedWithId" ColumnName="EmployedWithId" />
+          <ScalarProperty Name="DateOfHire" ColumnName="DateOfHire" />
+          <ScalarProperty Name="DateOfTermination" ColumnName="DateOfTermination" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="ReasonForLeavingId" ColumnName="ReasonForLeavingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartTimeEmployees">
+      <EntityTypeMapping TypeName="EMSModel.PartTimeEmployee">
+        <MappingFragment StoreEntitySet="PartTimeEmployee">
+          <ScalarProperty Name="EmployeeRef2Id" ColumnName="EmployeeRef2Id" />
+          <ScalarProperty Name="EmployedWith2Id" ColumnName="EmployedWith2Id" />
+          <ScalarProperty Name="DateOfHire" ColumnName="DateOfHire" />
+          <ScalarProperty Name="DateOfTermination" ColumnName="DateOfTermination" />
+          <ScalarProperty Name="HourlyRate" ColumnName="HourlyRate" />
+          <ScalarProperty Name="ReasonForLeaving2Id" ColumnName="ReasonForLeaving2Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pieces">
+      <EntityTypeMapping TypeName="EMSModel.Piece">
+        <MappingFragment StoreEntitySet="Pieces">
+          <ScalarProperty Name="EmployeeRef6Id" ColumnName="EmployeeRef6Id" />
+          <ScalarProperty Name="EmployedWith6Id" ColumnName="EmployedWith6Id" />
+          <ScalarProperty Name="WeekOf" ColumnName="WeekOf" />
+          <ScalarProperty Name="Mon" ColumnName="Mon" />
+          <ScalarProperty Name="Tue" ColumnName="Tue" />
+          <ScalarProperty Name="Wed" ColumnName="Wed" />
+          <ScalarProperty Name="Thu" ColumnName="Thu" />
+          <ScalarProperty Name="Fri" ColumnName="Fri" />
+          <ScalarProperty Name="Sat" ColumnName="Sat" />
+          <ScalarProperty Name="Sun" ColumnName="Sun" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReasonForLeavings">
+      <EntityTypeMapping TypeName="EMSModel.ReasonForLeaving">
+        <MappingFragment StoreEntitySet="ReasonForLeaving">
+          <ScalarProperty Name="ReasonForLeavingId" ColumnName="ReasonForLeavingId" />
+          <ScalarProperty Name="ReasonForLeaving1" ColumnName="ReasonForLeaving" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Seasons">
+      <EntityTypeMapping TypeName="EMSModel.Season">
+        <MappingFragment StoreEntitySet="Season">
+          <ScalarProperty Name="SeasonId" ColumnName="SeasonId" />
+          <ScalarProperty Name="Season1" ColumnName="Season" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SeasonalEmployees">
+      <EntityTypeMapping TypeName="EMSModel.SeasonalEmployee">
+        <MappingFragment StoreEntitySet="SeasonalEmployee">
+          <ScalarProperty Name="EmployeeRef3Id" ColumnName="EmployeeRef3Id" />
+          <ScalarProperty Name="EmployedWith3Id" ColumnName="EmployedWith3Id" />
+          <ScalarProperty Name="SeasonYear" ColumnName="SeasonYear" />
+          <ScalarProperty Name="PiecePay" ColumnName="PiecePay" />
+          <ScalarProperty Name="ReasonForLeaving3Id" ColumnName="ReasonForLeaving3Id" />
+          <ScalarProperty Name="SeasonId" ColumnName="SeasonId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeCards">
+      <EntityTypeMapping TypeName="EMSModel.TimeCard">
+        <MappingFragment StoreEntitySet="TimeCard">
+          <ScalarProperty Name="EmployeeRef5Id" ColumnName="EmployeeRef5Id" />
+          <ScalarProperty Name="EmployedWith5Id" ColumnName="EmployedWith5Id" />
+          <ScalarProperty Name="WeekOf" ColumnName="WeekOf" />
+          <ScalarProperty Name="Mon" ColumnName="Mon" />
+          <ScalarProperty Name="Tue" ColumnName="Tue" />
+          <ScalarProperty Name="Wed" ColumnName="Wed" />
+          <ScalarProperty Name="Thu" ColumnName="Thu" />
+          <ScalarProperty Name="Fri" ColumnName="Fri" />
+          <ScalarProperty Name="Sat" ColumnName="Sat" />
+          <ScalarProperty Name="Sun" ColumnName="Sun" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="EMSModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

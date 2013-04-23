@@ -1,0 +1,77 @@
+﻿@model IEnumerable<EmployeeManagementSystem.Models.Audit>
+
+@{
+    ViewBag.Title = "Audit Table";
+}
+
+<script type="text/javascript">
+
+    $(function () {
+        document.getElementById('DateTime').focus();
+    });
+
+</script>
+
+<h2>Audit Table</h2>
+
+<p>
+    @using (Html.BeginForm("SearchIndex","Audit",FormMethod.Post ,new{DateTime = "SearchForm"})){
+        <p>     
+            Audits Since: @Html.TextBox("DateTime", "", new {@class="SearchTextBox" })<br />
+            <input type="submit" value="Search"  onclick="$('#SearchForm').submit()" />
+        </p>
+    }
+</p>
+
+<table>
+    <tr>
+        <th>
+            Username
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Audit Type
+        </th>
+        <th>
+            Field
+        </th>
+        <th>
+            Old Value
+        </th>
+        <th>
+            New Value
+        </th>
+        <th>
+            Employee SIN
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuditAction.AuditAction1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fieldname.Fieldname1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OldValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.SIN_BN) 
+        </td>
+    </tr>
+}
+
+</table>

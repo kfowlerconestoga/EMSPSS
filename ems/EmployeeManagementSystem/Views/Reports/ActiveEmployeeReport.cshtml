@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewBag.Title = "ActiveEmployeeReport";
+}
+
+
+<h4>@ViewBag.Company</h4>
+<h4> Generated: @DateTime.Now</h4>
+<h2>Active Employee Report</h2>
+
+
+<table>
+     <tr>
+
+        <th colspan="3">
+            Full Time
+        </th>
+     </tr>
+     <tr>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            Date of Hire
+        </th>
+        <th>
+            Avg. Hours
+        </th>
+       
+     </tr>
+
+@foreach (var item in ViewBag.ftlist) {    
+    <tr>
+        <td>
+            @item.Key.Employee.FirstName,
+            @item.Key.Employee.LastName
+        </td>            
+        <td>
+             @item.Key.DateOfHire.ToString("yyyy-MM-dd")
+        </td>
+        <td>
+             @item.Value
+        </td>       
+    </tr>
+}
+</table>
+
+<br />
+<br />
+
+<table>
+     <tr>
+
+        <th colspan="3">
+            Part Time
+        </th>
+     </tr>
+     <tr>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            Date of Hire
+        </th>
+        <th>
+            Avg. Hours
+        </th>
+       
+     </tr>
+
+@foreach (var item in ViewBag.ptlist) {    
+    <tr>
+        <td>
+            @item.Key.Employee.FirstName,
+            @item.Key.Employee.LastName
+        </td>            
+        <td>
+             @item.Key.DateOfHire.ToString("yyyy-MM-dd")
+        </td>
+        <td>
+             @item.Value
+        </td>       
+    </tr>
+}
+</table>
+
+<br />
+<br />
+
+<table>
+     <tr>
+
+        <th colspan="3">
+            Seasonal
+        </th>
+     </tr>
+     <tr>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            Season Year
+        </th>
+        <th>
+            Avg. Hours
+        </th>
+       
+     </tr>
+
+@foreach (var item in ViewBag.sealist) {    
+    <tr>
+        <td>
+            @item.Key.Employee.FirstName,
+            @item.Key.Employee.LastName
+        </td>            
+        <td>
+             @item.Key.SeasonYear.ToString("yyyy")
+        </td>
+        <td>
+             @item.Value
+        </td>       
+    </tr>
+}
+</table>
+
+<br />
+<br />
+
+<table>
+     <tr>
+
+        <th colspan="3">
+            Contract
+        </th>
+     </tr>
+     <tr>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            Contract Start Date
+        </th>
+        <th>
+            Avg. Hours
+        </th>
+       
+     </tr>
+
+@foreach (var item in ViewBag.conlist) {    
+    <tr>
+        <td>
+            
+            @item.Employee.LastName
+        </td>            
+        <td>
+             @item.ContractStartDate.ToString("yyyy-MM-dd")
+        </td>
+        <td>
+             --
+        </td>       
+    </tr>
+}
+</table>

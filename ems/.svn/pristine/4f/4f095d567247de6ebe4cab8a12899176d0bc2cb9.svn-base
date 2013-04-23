@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "InactiveEmployeeReport";
+}
+
+
+<h4>@ViewBag.Company</h4>
+<h4> Generated: @DateTime.Now</h4>
+<h2>Inactive Employee Report</h2>
+
+
+<table>
+     
+     <tr>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            Hired
+        </th>
+        <th>
+            Terminated
+        </th>
+        <th>
+            Reason For Leaving
+        </th>
+        <th>            
+            Type
+        </th>
+     </tr>
+
+@foreach (var item in ViewBag.ftlist) {    
+    <tr>
+        <td>
+             @item.Employee.FirstName,
+             @item.Employee.LastName
+        </td>            
+        <td>
+             @item.DateOfHire.ToString("yyyy-MM-dd")
+        </td>
+        <td>
+             @item.DateOfTermination.ToString("yyyy-MM-dd")
+        </td> 
+        <td>
+            @if(item.ReasonForLeaving.ReasonForLeaving1 != null)
+            {
+                @item.ReasonForLeaving.ReasonForLeaving1  
+            }
+        </td> 
+        <td>
+            FullTime  
+        </td>    
+    </tr>
+}
+
+
+@foreach (var item in ViewBag.ptlist) {    
+    <tr>
+        <td>
+             @item.Employee.FirstName,
+             @item.Employee.LastName
+        </td>            
+        <td>
+             @item.DateOfHire.ToString("yyyy-MM-dd")
+        </td>
+        <td>
+             @item.DateOfTermination.ToString("yyyy-MM-dd")
+        </td>
+        <td>
+            @if(item.ReasonForLeaving.ReasonForLeaving1 != null)
+            {
+                @item.ReasonForLeaving.ReasonForLeaving1  
+            } 
+        </td> 
+        <td>
+            PartTime  
+        </td>       
+    </tr>
+}
+
+@foreach (var item in ViewBag.sealist) {    
+    <tr>
+        <td>
+            @item.Employee.FirstName,
+            @item.Employee.LastName
+        </td>            
+        <td>
+             @item.Season.Season1
+        </td>
+        <td>
+             @item.SeasonYear.ToString("yyyy")
+        </td> 
+        <td>
+            @if(item.ReasonForLeaving.ReasonForLeaving1 != null)
+            {
+                @item.ReasonForLeaving.ReasonForLeaving1  
+            }  
+        </td> 
+        <td>
+            Seasonal  
+        </td>       
+    </tr>
+}
+
+
+@foreach (var item in ViewBag.conlist) {    
+    <tr>
+        <td>
+            
+            @item.Employee.LastName
+        </td>            
+        <td>
+             @item.ContractStartDate.ToString("yyyy-MM-dd")
+        </td>
+        <td>
+             @item.ContractStopDate.ToString("yyyy-MM-dd")
+        </td>
+        <td>
+            @if(item.ReasonForLeaving.ReasonForLeaving1 != null)
+            {
+                @item.ReasonForLeaving.ReasonForLeaving1  
+            } 
+        </td> 
+        <td>
+            Contract  
+        </td>       
+    </tr>
+}
+</table>

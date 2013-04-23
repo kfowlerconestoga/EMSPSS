@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="EMSModelStoreContainer">
+    <EntitySet Name="Audit" EntityType="EMSModel.Store.Audit" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AuditActions" EntityType="EMSModel.Store.AuditActions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Company" EntityType="EMSModel.Store.Company" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContractEmployee" EntityType="EMSModel.Store.ContractEmployee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employee" EntityType="EMSModel.Store.Employee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeeType" EntityType="EMSModel.Store.EmployeeType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Fieldname" EntityType="EMSModel.Store.Fieldname" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FullTimeEmployee" EntityType="EMSModel.Store.FullTimeEmployee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PartTimeEmployee" EntityType="EMSModel.Store.PartTimeEmployee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pieces" EntityType="EMSModel.Store.Pieces" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReasonForLeaving" EntityType="EMSModel.Store.ReasonForLeaving" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Season" EntityType="EMSModel.Store.Season" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SeasonalEmployee" EntityType="EMSModel.Store.SeasonalEmployee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TimeCard" EntityType="EMSModel.Store.TimeCard" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="EMSModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="AuditTypeId" Association="EMSModel.Store.AuditTypeId">
+      <End Role="AuditActions" EntitySet="AuditActions" />
+      <End Role="Audit" EntitySet="Audit" />
+    </AssociationSet>
+    <AssociationSet Name="CompanyId" Association="EMSModel.Store.CompanyId">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="EmployeeType" EntitySet="EmployeeType" />
+    </AssociationSet>
+    <AssociationSet Name="EmployedWith2Id" Association="EMSModel.Store.EmployedWith2Id">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="PartTimeEmployee" EntitySet="PartTimeEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="EmployedWith3Id" Association="EMSModel.Store.EmployedWith3Id">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="SeasonalEmployee" EntitySet="SeasonalEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="EmployedWith4Id" Association="EMSModel.Store.EmployedWith4Id">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="ContractEmployee" EntitySet="ContractEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="EmployedWith5Id" Association="EMSModel.Store.EmployedWith5Id">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="TimeCard" EntitySet="TimeCard" />
+    </AssociationSet>
+    <AssociationSet Name="EmployedWith6Id" Association="EMSModel.Store.EmployedWith6Id">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Pieces" EntitySet="Pieces" />
+    </AssociationSet>
+    <AssociationSet Name="EmployedWithId" Association="EMSModel.Store.EmployedWithId">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="FullTimeEmployee" EntitySet="FullTimeEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeId" Association="EMSModel.Store.EmployeeId">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeeType" EntitySet="EmployeeType" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeRef2Id" Association="EMSModel.Store.EmployeeRef2Id">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="PartTimeEmployee" EntitySet="PartTimeEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeRef3Id" Association="EMSModel.Store.EmployeeRef3Id">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="SeasonalEmployee" EntitySet="SeasonalEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeRef4Id" Association="EMSModel.Store.EmployeeRef4Id">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="ContractEmployee" EntitySet="ContractEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeRef5Id" Association="EMSModel.Store.EmployeeRef5Id">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="TimeCard" EntitySet="TimeCard" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeRef6Id" Association="EMSModel.Store.EmployeeRef6Id">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Pieces" EntitySet="Pieces" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeRefId" Association="EMSModel.Store.EmployeeRefId">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="FullTimeEmployee" EntitySet="FullTimeEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeRefId5" Association="EMSModel.Store.EmployeeRefId5">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Audit" EntitySet="Audit" />
+    </AssociationSet>
+    <AssociationSet Name="FieldId" Association="EMSModel.Store.FieldId">
+      <End Role="Fieldname" EntitySet="Fieldname" />
+      <End Role="Audit" EntitySet="Audit" />
+    </AssociationSet>
+    <AssociationSet Name="ReasonForLeaving2Id" Association="EMSModel.Store.ReasonForLeaving2Id">
+      <End Role="ReasonForLeaving" EntitySet="ReasonForLeaving" />
+      <End Role="PartTimeEmployee" EntitySet="PartTimeEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="ReasonForLeaving3Id" Association="EMSModel.Store.ReasonForLeaving3Id">
+      <End Role="ReasonForLeaving" EntitySet="ReasonForLeaving" />
+      <End Role="SeasonalEmployee" EntitySet="SeasonalEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="ReasonForLeaving4Id" Association="EMSModel.Store.ReasonForLeaving4Id">
+      <End Role="ReasonForLeaving" EntitySet="ReasonForLeaving" />
+      <End Role="ContractEmployee" EntitySet="ContractEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="ReasonForLeavingId" Association="EMSModel.Store.ReasonForLeavingId">
+      <End Role="ReasonForLeaving" EntitySet="ReasonForLeaving" />
+      <End Role="FullTimeEmployee" EntitySet="FullTimeEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="SeasonId" Association="EMSModel.Store.SeasonId">
+      <End Role="Season" EntitySet="Season" />
+      <End Role="SeasonalEmployee" EntitySet="SeasonalEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="UserName" Association="EMSModel.Store.UserName">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Audit" EntitySet="Audit" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Audit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+    <Property Name="AuditTypeId" Type="int" />
+    <Property Name="FieldId" Type="int" />
+    <Property Name="OldValue" Type="nvarchar" MaxLength="40" />
+    <Property Name="NewValue" Type="nvarchar" MaxLength="40" />
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AuditActions">
+    <Key>
+      <PropertyRef Name="AuditTypeId" />
+    </Key>
+    <Property Name="AuditTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AuditAction" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="EnrolledSince" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContractEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeRef4Id" />
+      <PropertyRef Name="EmployedWith4Id" />
+      <PropertyRef Name="ContractStartDate" />
+    </Key>
+    <Property Name="EmployeeRef4Id" Type="int" Nullable="false" />
+    <Property Name="EmployedWith4Id" Type="int" Nullable="false" />
+    <Property Name="ContractStartDate" Type="date" Nullable="false" />
+    <Property Name="ContractStopDate" Type="date" Nullable="false" />
+    <Property Name="ReasonForLeaving4Id" Type="int" />
+    <Property Name="FixedContractAmount" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SIN/BN" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="30" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="30" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Completed" Type="bit" Nullable="false" />
+    <Property Name="DateOfBirth" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeeType">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="CompanyId" />
+      <PropertyRef Name="DateofHire" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="EmployeeType" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="DateofHire" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fieldname">
+    <Key>
+      <PropertyRef Name="FieldId" />
+    </Key>
+    <Property Name="FieldId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Fieldname" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="FullTimeEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeRefId" />
+      <PropertyRef Name="EmployedWithId" />
+      <PropertyRef Name="DateOfHire" />
+    </Key>
+    <Property Name="EmployeeRefId" Type="int" Nullable="false" />
+    <Property Name="EmployedWithId" Type="int" Nullable="false" />
+    <Property Name="DateOfHire" Type="date" Nullable="false" />
+    <Property Name="DateOfTermination" Type="date" />
+    <Property Name="Salary" Type="float" />
+    <Property Name="ReasonForLeavingId" Type="int" />
+  </EntityType>
+  <EntityType Name="PartTimeEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeRef2Id" />
+      <PropertyRef Name="EmployedWith2Id" />
+      <PropertyRef Name="DateOfHire" />
+    </Key>
+    <Property Name="EmployeeRef2Id" Type="int" Nullable="false" />
+    <Property Name="EmployedWith2Id" Type="int" Nullable="false" />
+    <Property Name="DateOfHire" Type="date" Nullable="false" />
+    <Property Name="DateOfTermination" Type="date" />
+    <Property Name="HourlyRate" Type="float" />
+    <Property Name="ReasonForLeaving2Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Pieces">
+    <Key>
+      <PropertyRef Name="EmployeeRef6Id" />
+      <PropertyRef Name="EmployedWith6Id" />
+      <PropertyRef Name="WeekOf" />
+    </Key>
+    <Property Name="EmployeeRef6Id" Type="int" Nullable="false" />
+    <Property Name="EmployedWith6Id" Type="int" Nullable="false" />
+    <Property Name="WeekOf" Type="date" Nullable="false" />
+    <Property Name="Mon" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Tue" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Wed" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Thu" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Fri" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Sat" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Sun" Type="decimal" Precision="6" Scale="2" />
+  </EntityType>
+  <EntityType Name="ReasonForLeaving">
+    <Key>
+      <PropertyRef Name="ReasonForLeavingId" />
+    </Key>
+    <Property Name="ReasonForLeavingId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ReasonForLeaving" Type="nvarchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Season">
+    <Key>
+      <PropertyRef Name="SeasonId" />
+    </Key>
+    <Property Name="SeasonId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Season" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SeasonalEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeRef3Id" />
+      <PropertyRef Name="EmployedWith3Id" />
+      <PropertyRef Name="SeasonYear" />
+    </Key>
+    <Property Name="EmployeeRef3Id" Type="int" Nullable="false" />
+    <Property Name="EmployedWith3Id" Type="int" Nullable="false" />
+    <Property Name="SeasonYear" Type="date" Nullable="false" />
+    <Property Name="PiecePay" Type="float" />
+    <Property Name="ReasonForLeaving3Id" Type="int" />
+    <Property Name="SeasonId" Type="int" />
+  </EntityType>
+  <EntityType Name="TimeCard">
+    <Key>
+      <PropertyRef Name="EmployeeRef5Id" />
+      <PropertyRef Name="EmployedWith5Id" />
+      <PropertyRef Name="WeekOf" />
+    </Key>
+    <Property Name="EmployeeRef5Id" Type="int" Nullable="false" />
+    <Property Name="EmployedWith5Id" Type="int" Nullable="false" />
+    <Property Name="WeekOf" Type="date" Nullable="false" />
+    <Property Name="Mon" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Tue" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Wed" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Thu" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Fri" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Sat" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Sun" Type="decimal" Precision="6" Scale="2" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <Association Name="AuditTypeId">
+    <End Role="AuditActions" Type="EMSModel.Store.AuditActions" Multiplicity="0..1" />
+    <End Role="Audit" Type="EMSModel.Store.Audit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuditActions">
+        <PropertyRef Name="AuditTypeId" />
+      </Principal>
+      <Dependent Role="Audit">
+        <PropertyRef Name="AuditTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CompanyId">
+    <End Role="Company" Type="EMSModel.Store.Company" Multiplicity="1" />
+    <End Role="EmployeeType" Type="EMSModel.Store.EmployeeType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="EmployeeType">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployedWith2Id">
+    <End Role="Company" Type="EMSModel.Store.Company" Multiplicity="1" />
+    <End Role="PartTimeEmployee" Type="EMSModel.Store.PartTimeEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="PartTimeEmployee">
+        <PropertyRef Name="EmployedWith2Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployedWith3Id">
+    <End Role="Company" Type="EMSModel.Store.Company" Multiplicity="1" />
+    <End Role="SeasonalEmployee" Type="EMSModel.Store.SeasonalEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="SeasonalEmployee">
+        <PropertyRef Name="EmployedWith3Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployedWith4Id">
+    <End Role="Company" Type="EMSModel.Store.Company" Multiplicity="1" />
+    <End Role="ContractEmployee" Type="EMSModel.Store.ContractEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="ContractEmployee">
+        <PropertyRef Name="EmployedWith4Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployedWith5Id">
+    <End Role="Company" Type="EMSModel.Store.Company" Multiplicity="1" />
+    <End Role="TimeCard" Type="EMSModel.Store.TimeCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="TimeCard">
+        <PropertyRef Name="EmployedWith5Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployedWith6Id">
+    <End Role="Company" Type="EMSModel.Store.Company" Multiplicity="1" />
+    <End Role="Pieces" Type="EMSModel.Store.Pieces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="Pieces">
+        <PropertyRef Name="EmployedWith6Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployedWithId">
+    <End Role="Company" Type="EMSModel.Store.Company" Multiplicity="1" />
+    <End Role="FullTimeEmployee" Type="EMSModel.Store.FullTimeEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="FullTimeEmployee">
+        <PropertyRef Name="EmployedWithId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeId">
+    <End Role="Employee" Type="EMSModel.Store.Employee" Multiplicity="1" />
+    <End Role="EmployeeType" Type="EMSModel.Store.EmployeeType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="EmployeeType">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeRef2Id">
+    <End Role="Employee" Type="EMSModel.Store.Employee" Multiplicity="1" />
+    <End Role="PartTimeEmployee" Type="EMSModel.Store.PartTimeEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="PartTimeEmployee">
+        <PropertyRef Name="EmployeeRef2Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeRef3Id">
+    <End Role="Employee" Type="EMSModel.Store.Employee" Multiplicity="1" />
+    <End Role="SeasonalEmployee" Type="EMSModel.Store.SeasonalEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="SeasonalEmployee">
+        <PropertyRef Name="EmployeeRef3Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeRef4Id">
+    <End Role="Employee" Type="EMSModel.Store.Employee" Multiplicity="1" />
+    <End Role="ContractEmployee" Type="EMSModel.Store.ContractEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="ContractEmployee">
+        <PropertyRef Name="EmployeeRef4Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeRef5Id">
+    <End Role="Employee" Type="EMSModel.Store.Employee" Multiplicity="1" />
+    <End Role="TimeCard" Type="EMSModel.Store.TimeCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="TimeCard">
+        <PropertyRef Name="EmployeeRef5Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeRef6Id">
+    <End Role="Employee" Type="EMSModel.Store.Employee" Multiplicity="1" />
+    <End Role="Pieces" Type="EMSModel.Store.Pieces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="Pieces">
+        <PropertyRef Name="EmployeeRef6Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeRefId">
+    <End Role="Employee" Type="EMSModel.Store.Employee" Multiplicity="1" />
+    <End Role="FullTimeEmployee" Type="EMSModel.Store.FullTimeEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="FullTimeEmployee">
+        <PropertyRef Name="EmployeeRefId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeRefId5">
+    <End Role="Employee" Type="EMSModel.Store.Employee" Multiplicity="1" />
+    <End Role="Audit" Type="EMSModel.Store.Audit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="Audit">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FieldId">
+    <End Role="Fieldname" Type="EMSModel.Store.Fieldname" Multiplicity="0..1" />
+    <End Role="Audit" Type="EMSModel.Store.Audit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fieldname">
+        <PropertyRef Name="FieldId" />
+      </Principal>
+      <Dependent Role="Audit">
+        <PropertyRef Name="FieldId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReasonForLeaving2Id">
+    <End Role="ReasonForLeaving" Type="EMSModel.Store.ReasonForLeaving" Multiplicity="0..1" />
+    <End Role="PartTimeEmployee" Type="EMSModel.Store.PartTimeEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReasonForLeaving">
+        <PropertyRef Name="ReasonForLeavingId" />
+      </Principal>
+      <Dependent Role="PartTimeEmployee">
+        <PropertyRef Name="ReasonForLeaving2Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReasonForLeaving3Id">
+    <End Role="ReasonForLeaving" Type="EMSModel.Store.ReasonForLeaving" Multiplicity="0..1" />
+    <End Role="SeasonalEmployee" Type="EMSModel.Store.SeasonalEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReasonForLeaving">
+        <PropertyRef Name="ReasonForLeavingId" />
+      </Principal>
+      <Dependent Role="SeasonalEmployee">
+        <PropertyRef Name="ReasonForLeaving3Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReasonForLeaving4Id">
+    <End Role="ReasonForLeaving" Type="EMSModel.Store.ReasonForLeaving" Multiplicity="0..1" />
+    <End Role="ContractEmployee" Type="EMSModel.Store.ContractEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReasonForLeaving">
+        <PropertyRef Name="ReasonForLeavingId" />
+      </Principal>
+      <Dependent Role="ContractEmployee">
+        <PropertyRef Name="ReasonForLeaving4Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReasonForLeavingId">
+    <End Role="ReasonForLeaving" Type="EMSModel.Store.ReasonForLeaving" Multiplicity="0..1" />
+    <End Role="FullTimeEmployee" Type="EMSModel.Store.FullTimeEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReasonForLeaving">
+        <PropertyRef Name="ReasonForLeavingId" />
+      </Principal>
+      <Dependent Role="FullTimeEmployee">
+        <PropertyRef Name="ReasonForLeavingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SeasonId">
+    <End Role="Season" Type="EMSModel.Store.Season" Multiplicity="0..1" />
+    <End Role="SeasonalEmployee" Type="EMSModel.Store.SeasonalEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Season">
+        <PropertyRef Name="SeasonId" />
+      </Principal>
+      <Dependent Role="SeasonalEmployee">
+        <PropertyRef Name="SeasonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserName">
+    <End Role="Users" Type="EMSModel.Store.Users" Multiplicity="1" />
+    <End Role="Audit" Type="EMSModel.Store.Audit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="Audit">
+        <PropertyRef Name="UserName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,56 @@
+﻿@model EmployeeManagementSystem.Models.PartTimeEmployee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Employee</legend>
+
+    <div class="display-label"><strong>First Name</strong></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Employee.FirstName)
+    </div>
+
+    <div class="display-label"><strong>Last Name</strong></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Employee.LastName)
+    </div>
+
+    <div class="display-label"><strong>SIN</strong></div>
+    <div class="display-field">
+        @ViewBag.SIN
+    </div>  
+
+    <div class="display-label"><strong>Date of Birth</strong></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Employee.DateOfBirth)
+    </div>
+
+    <div class="display-label"><strong>Date of Hire</strong></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateOfHire)
+    </div>
+
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="display-label"><strong>Date of Termination</strong></div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DateOfTermination)
+        </div>
+        
+        <div class="display-label"><strong>Reason For Leaving</strong></div>
+        <div class="display-field">
+            @ViewBag.Reason
+        </div>
+        
+        <div class="display-label"><strong>Hourly Rate</strong></div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.HourlyRate)
+        </div>
+    }
+
+</fieldset>
+

@@ -1,0 +1,51 @@
+﻿@model EmployeeManagementSystem.Models.ContractEmployee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Employee</legend>
+
+    
+
+    <div class="display-label"><strong>Company Name</strong></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Employee.LastName)
+    </div>
+
+    <div class="display-label"><strong>BN</strong></div>
+    <div class="display-field">
+        @ViewBag.BN
+    </div>  
+
+    <div class="display-label"><strong>Date of Incorporation</strong></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Employee.DateOfBirth)
+    </div>
+
+    <div class="display-label"><strong>Contract Start</strong></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContractStartDate)
+    </div>
+
+    <div class="display-label"><strong>Contract Stop</strong></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContractStopDate)
+    </div>
+    
+    <div class="display-label"><strong>Fixed Contract Amount</strong></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FixedContractAmount)
+    </div>
+        
+    <div class="display-label"><strong>Reason For Leaving</strong></div>
+    <div class="display-field">
+        @ViewBag.Reason
+    </div>
+    
+
+</fieldset>
+

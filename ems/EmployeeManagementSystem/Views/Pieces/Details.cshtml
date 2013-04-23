@@ -1,0 +1,62 @@
+﻿@model EmployeeManagementSystem.Models.Piece
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Pieces</legend>
+    <p>
+        <b>Name:</b> @Html.DisplayFor(model => model.Employee.FirstName) @Html.DisplayFor(model => model.Employee.LastName)
+        <br />
+        <b>Company Name:</b> @Html.DisplayFor(model => model.Company.CompanyName)
+        <br />
+        <b>Week Of:</b> @Html.DisplayFor(model => model.WeekOf)
+        <br />
+    </p>
+    @Html.HiddenFor(model => model.EmployeeRef6Id)
+    @Html.HiddenFor(model => model.EmployedWith6Id)
+    @Html.HiddenFor(model => model.WeekOf)
+    <br />
+    <br />
+    <b>Pieces Made</b>
+
+    <div class="display-label">Mon</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mon)
+    </div>
+
+    <div class="display-label">Tue</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tue)
+    </div>
+
+    <div class="display-label">Wed</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Wed)
+    </div>
+
+    <div class="display-label">Thu</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Thu)
+    </div>
+
+    <div class="display-label">Fri</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fri)
+    </div>
+
+    <div class="display-label">Sat</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sat)
+    </div>
+
+    <div class="display-label">Sun</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sun)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Index", new { Model.Employee.EmployeeId, Model.Company.CompanyId })
+</p>

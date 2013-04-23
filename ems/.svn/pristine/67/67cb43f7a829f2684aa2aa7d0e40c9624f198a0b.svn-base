@@ -1,0 +1,161 @@
+﻿@model  IDictionary<EmployeeManagementSystem.Models.EmployeeType, decimal?>
+@{
+    ViewBag.Title = "HoursWorkedReport";
+}
+
+<h2>Hours Worked Report</h2>
+
+<h4>Company Name: @ViewBag.ThisCompany</h4>
+<h4>For Week Ending: @ViewBag.DateWeek</h4>
+
+<p>
+    @using (Html.BeginForm("HoursIndex", "Reports", FormMethod.Post, new { DateTime = "SearchForm" }))
+    {
+        <p>     
+            Week Of: @Html.TextBox("DateTimeQuery", "", new {@class="SearchTextBox" })<br />
+            @Html.Hidden("CompList","ViewBag.Company")
+            <input type="submit" value="Search"  onclick="$('#SearchForm').submit()" />
+        </p>
+    }
+</p>
+
+
+<table>
+     <tr>
+
+        <th colspan="3">
+    Full Time
+            </th>
+        </tr>
+     <tr>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            SIN
+        </th>
+        <th>
+            Hours
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    if (item.Key.EmployeeType1 == "Full Time ")
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Key.Employee.FirstName),
+            @Html.DisplayFor(modelItem => item.Key.Employee.LastName)
+        </td>
+            
+        <td>
+             @Html.DisplayFor(modelItem => item.Key.Employee.SIN_BN)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Value) 
+        </td>
+       
+      </tr>
+    
+}
+}
+    </table>
+
+<br />
+
+<br />
+
+<table>
+    <tr>
+
+        <th colspan="3">
+    Seasonal
+            </th>
+        </tr>
+     <tr>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            SIN
+        </th>
+        <th>
+            Hours
+        </th>
+       
+    </tr>
+
+    
+
+@foreach (var item in Model) {
+    if (item.Key.EmployeeType1 == "Seasonal  ")
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Key.Employee.FirstName),
+            @Html.DisplayFor(modelItem => item.Key.Employee.LastName)
+        </td>
+            
+        <td>
+             @Html.DisplayFor(modelItem => item.Key.Employee.SIN_BN)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Value) 
+        </td>
+       
+      </tr>
+    
+}
+}
+    </table>
+
+
+
+
+
+   <br />
+
+<br />
+
+<table>
+     <tr>
+
+        <th colspan="3">
+            Part Time
+            </th>
+        </tr>
+     <tr>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            SIN
+        </th>
+        <th>
+            Hours
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    if (item.Key.EmployeeType1 == "Part Time ")
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Key.Employee.FirstName),
+            @Html.DisplayFor(modelItem => item.Key.Employee.LastName)
+        </td>
+            
+        <td>
+             @Html.DisplayFor(modelItem => item.Key.Employee.SIN_BN)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Value) 
+        </td>
+       
+      </tr>
+    
+}
+}
+    </table>

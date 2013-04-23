@@ -1,0 +1,192 @@
+﻿
+@{
+    ViewBag.Title = "PayrollReport";
+}
+
+
+<h4>@ViewBag.Company</h4>
+<h4> Generated: @DateTime.Now</h4>
+<h2>Payroll Report</h2>
+
+
+<table>
+     <tr>
+
+        <th colspan="4">
+            Full Time
+        </th>
+     </tr>
+     <tr>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            Hours
+        </th>
+        <th>
+            Gross
+        </th>
+        <th>
+            Notes
+        </th>
+       
+     </tr>
+
+@for (int i = 0; i < ViewBag.ftlist.Count;i++ )
+{    
+    <tr>
+        <td>
+            @ViewBag.ftlist[i].Employee.FirstName,
+            @ViewBag.ftlist[i].Employee.LastName
+        </td>            
+        <td>
+             @ViewBag.fthours[i]
+        </td>
+        <td>
+             @ViewBag.ftpay[i].ToString("c2")
+        </td>
+        <td>
+             @ViewBag.ftnotes[i]
+        </td>       
+    </tr>
+}
+</table>
+
+<br />
+<br />
+
+<table>
+     <tr>
+
+        <th colspan="4">
+            Part Time
+        </th>
+     </tr>
+     <tr>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            Hours
+        </th>
+        <th>
+            Gross
+        </th>
+        <th>
+            Notes
+        </th>
+       
+     </tr>
+
+@for (int i = 0; i < ViewBag.ptlist.Count;i++ )
+{    
+    <tr>
+        <td>
+            @ViewBag.ptlist[i].Employee.FirstName,
+            @ViewBag.ptlist[i].Employee.LastName
+        </td>            
+        <td>
+             @ViewBag.pthours[i]
+        </td>
+        <td>
+             @ViewBag.ptpay[i].ToString("c2")
+        </td>
+        <td>
+             @ViewBag.ptnotes[i]
+        </td>       
+    </tr>
+}
+</table>
+
+<br />
+<br />
+
+<table>
+     <tr>
+
+        <th colspan="4">
+            Seasonal
+        </th>
+     </tr>
+     <tr>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            Hours
+        </th>
+        <th>
+            Gross
+        </th>
+        <th>
+            Notes
+        </th>
+       
+     </tr>
+
+@for (int i = 0; i < ViewBag.sealist.Count;i++ )
+{    
+    <tr>
+        <td>
+            @ViewBag.sealist[i].Employee.FirstName,
+            @ViewBag.sealist[i].Employee.LastName
+        </td>            
+        <td>
+             @ViewBag.seahours[i]
+        </td>
+        <td>
+             @ViewBag.seapay[i].ToString("c2")
+        </td>
+        <td>
+             @ViewBag.seanotes[i]
+        </td>       
+    </tr>
+}
+</table>
+
+<br />
+<br />
+
+<table>
+     <tr>
+
+        <th colspan="4">
+            Contract
+        </th>
+     </tr>
+     <tr>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            Hours
+        </th>
+        <th>
+            Gross
+        </th>
+        <th>
+            Notes
+        </th>
+       
+     </tr>
+
+@for (int i = 0; i < ViewBag.conlist.Count;i++ )
+{    
+    <tr>
+        <td>
+            
+            @ViewBag.conlist[i].Employee.LastName
+        </td>            
+        <td>
+             --
+        </td>
+        <td>
+             @ViewBag.conlist[i].FixedContractAmount.ToString("c2")
+        </td>
+        <td>
+             @ViewBag.connotes[i]
+        </td>       
+    </tr>
+}
+</table>
+

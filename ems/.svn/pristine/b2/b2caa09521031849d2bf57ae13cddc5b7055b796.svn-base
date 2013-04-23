@@ -1,0 +1,53 @@
+﻿@model IEnumerable<EmployeeManagementSystem.Models.Company>
+
+@{
+    ViewBag.Title = "Manage Companies";
+}
+<script type="text/javascript">
+
+    $(function () {
+        document.getElementById('CompanyName').focus();
+    });
+
+</script>
+<h2>Manage Companies</h2>
+
+<p>
+    @using (Html.BeginForm("SearchIndex","Company",FormMethod.Post ,new{id = "SearchForm"})){
+        <p>     
+            Company Name: @Html.TextBox("CompanyName", "", new {@class="SearchTextBox" })<br />
+            <input type="submit" value="Search"  onclick="$('#SearchForm').submit()" />
+        </p>
+    }
+</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Company Name
+        </th>
+        <th>
+            Enrolled Since
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnrolledSince)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CompanyId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CompanyId }) 
+        </td>
+    </tr>
+}
+
+</table>

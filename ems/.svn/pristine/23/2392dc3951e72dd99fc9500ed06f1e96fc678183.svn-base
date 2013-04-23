@@ -1,0 +1,88 @@
+﻿@model EmployeeManagementSystem.Models.ContractEmployee
+@{
+    ViewBag.Title = "Edit Employee";
+}
+
+<h2>Edit Employee</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    
+    $(function () {
+        $('.focus :input').focus();
+    });
+   
+</script>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Employee</legend>
+
+        @Html.HiddenFor(model => model.EmployeeRef4Id)
+        @Html.HiddenFor(model => model.EmployedWith4Id)
+        @Html.HiddenFor(model => model.Employee.EmployeeId)
+        @Html.HiddenFor(model => model.Employee.Completed)
+
+        <div class="editor-label">
+            Contract Company Name
+        </div>
+        <div class="editor-field focus">
+            @Html.EditorFor(model => model.Employee.LastName)
+            @Html.ValidationMessageFor(model => model.Employee.LastName)
+        </div>
+
+        <div class="editor-label">
+            BN
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Employee.SIN_BN)
+            @Html.ValidationMessageFor(model => model.Employee.SIN_BN)
+            @Html.ValidationMessage("SIN_BN")
+        </div>       
+
+        @Html.HiddenFor(model => model.Employee.DateOfBirth)
+        
+
+        
+        <div class="editor-label">
+            Contract Start
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContractStartDate)
+            @Html.ValidationMessageFor(model => model.ContractStartDate)
+            @Html.ValidationMessage("CSD")
+        </div>     
+            
+        <div class="editor-label">
+            Contract Stop
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContractStopDate)
+            @Html.ValidationMessageFor(model => model.ContractStopDate)
+            @Html.ValidationMessage("CSD2")
+        </div>    
+            
+        <div class="editor-label">
+            Reason for Leaving
+        </div>
+        <div class="editor-field">                
+            @Html.DropDownListFor(model => model.ReasonForLeaving4Id, new List<SelectListItem>{new SelectListItem { Text = "--Select an Item--", Value = "0" },new SelectListItem { Text = "Left Company", Value = "1" }, new SelectListItem { Text = "Retired", Value = "2" }, new SelectListItem { Text = "Terminated", Value = "3" }, new SelectListItem { Text = "Laid Off", Value = "4" }, new SelectListItem { Text = "Contract Lapsed", Value = "5" }})
+            @Html.ValidationMessage("ReasonForLeaving")
+        </div>            
+            
+        <div class="editor-label">
+            Fixed Contract Amount
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FixedContractAmount)
+            @Html.ValidationMessageFor(model => model.FixedContractAmount)
+        </div>
+        
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}

@@ -1,0 +1,25 @@
+﻿@model EmployeeManagementSystem.Models.Company
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Company</legend>
+
+    <div class="display-label">CompanyName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyName)
+    </div>
+
+    <div class="display-label">EnrolledSince</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnrolledSince)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CompanyId }) |
+    @Html.ActionLink("Back to Companies", "Index")
+</p>

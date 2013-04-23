@@ -1,0 +1,40 @@
+﻿@model IEnumerable<EmployeeManagementSystem.Models.Company>
+
+@{
+    ViewBag.Title = "Company Search Results";
+}
+
+<h2>Company Search Results</h2>
+
+
+<table>
+    <tr>
+        <th>
+            Company Name
+        </th>
+        <th>
+            Enrolled Since
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.EnrolledSince)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit","Employee", new { id=item.CompanyId },null) |
+            @Html.ActionLink("Details", "Details","Employee", new { id=item.CompanyId },null) 
+        </td>
+      </tr>
+}
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to Companies", "Index")
+</div>

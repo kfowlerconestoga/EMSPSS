@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Time Cards and Pieces</h2>
+@using (Html.BeginForm("Home","TimeCard",FormMethod.Post ,new{id = "SearchTCForm"})){  
+        <div class="editor-label">            
+        Company           
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("compList", new SelectList(ViewBag.compList), "Select..") 
+        </div>
+        <input type="submit" value="Search"  onclick="$('#SearchTCForm').submit()" />
+}
+
+@if (ViewBag.empList.Count != 0)
+{
+    <table>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            SIN
+        </th>
+        <th></th>
+    </tr>
+    
+        @foreach (var item in ViewBag.empList) {
+    <tr>
+        <td>
+            @item.LastName, @item.FirstName
+        </td>
+        <td>
+            @item.SIN_BN
+        </td>
+        <td>
+            @Html.ActionLink("Time Card Entry", "Index", "TimeCard", new { EmployeeId=item.EmployeeId },null)            
+                @if(item.SeasonalEmployees.Count > 0)
+                {
+                    @Html.Raw(" | ")
+                    @Html.ActionLink("Pieces Entry", "Index", "Pieces", new { EmployeeId=item.EmployeeId},null)
+                }
+        </td>
+    </tr>
+}
+    
+    </table>
+}

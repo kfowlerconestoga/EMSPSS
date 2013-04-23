@@ -1,0 +1,85 @@
+﻿@model IEnumerable<EmployeeManagementSystem.Models.Piece>
+@{
+    ViewBag.Title = "Index";
+}
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    
+    $(function () {
+        $('.focus :input').focus();
+    });
+   
+</script>
+<h2>Pieces</h2>
+<p>
+    <b>Name:</b> @ViewBag.Name
+    <br />
+    <b>Company Name:</b> @ViewBag.Company
+</p>
+@using (Html.BeginForm("Edit", "Pieces", FormMethod.Get))
+{
+    <input type="hidden" name="EmployeeId" value="@ViewBag.EmployeeId" />
+    <div class="focus">
+    <input class="focus" type="date" name="PiecesDate" />
+    </div>
+    <input type="submit" value="Edit pieces" />
+}
+<br />
+<b>Pieces Completed</b>
+<table>
+    <tr>
+        <th>Week
+        </th>
+        <th>Mon
+        </th>
+        <th>Tue
+        </th>
+        <th>Wed
+        </th>
+        <th>Thu
+        </th>
+        <th>Fri
+        </th>
+        <th>Sat
+        </th>
+        <th>Sun
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeekOf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sun)
+            </td>
+            <td>
+            @Html.ActionLink("Details", "Details", new { item.Employee.EmployeeId, item.Company.CompanyId, item.WeekOf })
+            | @Html.ActionLink("Edit", "Edit", new { EmployeeId = item.Employee.EmployeeId, piecesDate = item.WeekOf })
+            </td>
+        </tr>
+    }
+
+</table>
